@@ -1,0 +1,33 @@
+{
+  "name": "exercicios-7-a-10-config-ambiente",
+  "version": "1.0.0",
+  "main": "dist/src/app.js",
+  "scripts": {
+    "check-env": "ts-node scripts/check-env.ts",
+    "predev": "npm run check-env",
+    "dev": "cross-env NODE_ENV=development ts-node src/app.ts",
+    "prestart:prod": "npm run check-env",
+    "start:prod": "cross-env NODE_ENV=production ts-node src/app.ts",
+    "build": "tsc",
+    "prestart": "npm run check-env",
+    "start": "node dist/src/app.js",
+    "typecheck": "tsc --noEmit",
+    "fake-api": "ts-node scripts/fake-weather-api.ts",
+    "try-mutate": "ts-node scripts/try-mutate-config.ts"
+  },
+  "author": "Carlos Gomes",
+  "license": "ISC",
+  "description": "Exercicios 7 a 10: chaves de API, modulo de configuracao, boas praticas com .env.example e variaveis dinamicas",
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "dotenv-expand": "^12.0.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.19.43",
+    "cross-env": "^10.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
